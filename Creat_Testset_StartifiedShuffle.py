@@ -14,11 +14,12 @@ dataset["income_cat"] = pd.cut(dataset["median_income"],
 # 收入划分区间 标注
 # data.iloc[Integer] row besides including the end
 # data.loc[theme] column not including the end
+print(dataset.keys())
 for train_index , test_index in selection.split(dataset,dataset["income_cat"]):
     start_train_set = dataset.loc[train_index]
     start_test_set = dataset.loc[test_index]
 
-print(start_train_set["income_cat"].value_counts() / len(start_train_set))
+print(f'income cat divide train set : {start_train_set["income_cat"].value_counts() / len(start_train_set)}')
 
 #Ding visualization
 
@@ -51,4 +52,4 @@ from pandas.plotting import scatter_matrix
 attributes = ["median_house_value","median_income","total_rooms","housing_median_age"]
 scatter_matrix(cp_data[attributes],figsize=(12,8))
 cp_data.plot(kind="scatter",x="median_income",y="median_house_value",alpha=0.1)
-plt.show()
+# plt.show()
