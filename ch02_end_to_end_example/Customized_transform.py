@@ -4,7 +4,7 @@ import pandas as pd
 data = pd.read_csv("housing.csv")
 print((data.keys()))
 # diffrences between iloc and loc
-print(data.iloc[:2]) # select some sample (integer index)
+print(f'data iloc is {data.iloc[:2]}\n\n\n') # select some sample (integer index)
 print(data.loc[:,'total_rooms']) # selct one symbol ( string index )
 
 # deal with string type data

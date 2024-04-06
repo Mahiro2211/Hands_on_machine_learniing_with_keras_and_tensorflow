@@ -5,7 +5,7 @@ import pandas as pd
 from sklearn.model_selection import StratifiedShuffleSplit
 
 selection = StratifiedShuffleSplit(n_splits=3 , test_size=0.2 , random_state=42)
-dataset = pd.read_csv('housing.csv')
+dataset = pd.read_csv('ch02_end_to_end_example\housing.csv')
 
 dataset["income_cat"] = pd.cut(dataset["median_income"],
                                bins=[0.,1.5,3.,4.5,6.,np.inf],
@@ -52,4 +52,4 @@ from pandas.plotting import scatter_matrix
 attributes = ["median_house_value","median_income","total_rooms","housing_median_age"]
 scatter_matrix(cp_data[attributes],figsize=(12,8))
 cp_data.plot(kind="scatter",x="median_income",y="median_house_value",alpha=0.1)
-# plt.show()
+plt.show()
